@@ -1,0 +1,85 @@
+{
+  "wireshark": [
+    "04c05a21e34cec326f1aff2f5f8a6e74e1ced984",
+    "2096bc1e5078732543e0a3ee115a2ce520a72bbc",
+    "beb119f911a698d44f4baa06d888bb1e775983bc"
+  ],
+  "GNOME/libxml2": [
+    "11ed4a7a90d5ce156a18980a4ad4e53e77384852",
+    "a820dbeac29d330bae4be05d9ecd939ad6b4aa33",
+    "8fb4a770075628d6441fb17a1e435100e2f3b1a2",
+    "e724879d964d774df9b7969fc846605aa1bac54c",
+    "de0cc20c29cb3f056062925395e0f68d2250a46f"
+  ],
+  "radareorg/radare2": [
+    "b53a1583d05c3a5bfe5fa60da133fe59dfbb02b8",
+    "64a82e284dddabaeb549228380103b57dead32a6",
+    "10517e3ff0e609697eb8cde60ec8dc999ee5ea24",
+    "669a404b6d98d5db409a5ebadae4e94b34ef5136",
+    "515e592b9bea0612bc63d8e93239ff35bcf645c7"
+  ],
+  "chromium": [
+    "ad00515fdc7190ec49541606eae0f20a991542ab",
+    "527dfadf54676fb7b162aeb753a7e997229e807f"
+  ],
+  "mruby": [
+    "a4d97934d51cb88954cc49161dc1d151f64afb6b",
+    "aa7f98dedb68d735a1665d3a289036c88b0c47ce",
+    "3cf291f72224715942beaf8553e42ba8891ab3c6",
+    "00acae117da1b45b318dc36531a7b0021b8097ae",
+    "aaa28a508903041dd7399d4159a8ace9766b022f"
+  ],
+  "freetype/freetype2": [
+    "29c759284e305ec428703c9a5831d0b1fc3497ef"
+  ],
+  "ffmpeg": [
+    "9a57a37b7041581c10629c8241260a5d7bfbc1e7"
+  ],
+  "Exim/exim": [
+    "65e061b76867a9ea7aeeb535341b790b90ae6c21",
+    "d4bc023436e4cce7c23c5f8bb5199e178b4cc743"
+  ],
+  "gpac": [
+    "1c449a34fe0b50aaffb881bfb9d7c5ab0bb18cdd",
+    "4c1360818fc8948e9307059fba4dc47ba8ad255d"
+  ],
+  "FRRouting/frr": [
+    "6d58272b4cf96f0daa846210dd2104877900f921",
+    "943d595a018e69b550db08cccba1d0778a86705a"
+  ],
+  "skia": [
+    "5c5cfe24efe4c728e787447dabffe345080d1fb9"
+  ],
+  "jmacd/xdelta-devel": [
+    "ef93ff74203e030073b898c05e8b4860b5d09ef2"
+  ],
+  "apache/httpd": [
+    "ecebcc035ccd8d0e2984fe41420d9e944f456b3c"
+  ],
+  "LibRaw": [
+    "d7c3d2cb460be10a3ea7b32e9443a83c243b2251"
+  ],
+  "pts/sam2p": [
+    "1d62cf8964bfcafa6561c4c3bb66d4aa4c529a73"
+  ],
+  "torvalds/linux": [
+    "05ab8f2647e4221cbdb3856dd7d32bd5407316b3",
+    "4943ba16bbc2db05115707b3ff7b4874e9e3c560",
+    "af3ff8045bbf3e32f1a448542e73abb4c8ceb6f1"
+  ],
+  "redis": [
+    "c992857618db99776917f10bf4f2345a5fdc78b0"
+  ],
+  "curl": [
+    "7f4a9a9b2a49547eae24d2e19bc5c346e9026479"
+  ],
+  "antirez/redis": [
+    "6d9f8e2462fc2c426d48c941edeb78e5df7d2977"
+  ],
+  "pcmacdon/jsish": [
+    "5408a6d93f45bf1f7acd9ae5d44e0ebd77379e98"
+  ],
+  "ONLYOFFICE/core" : [
+    "88cf60a3ed4a2b40d71a1c2ced72fa3902a30967"
+  ]
+}
