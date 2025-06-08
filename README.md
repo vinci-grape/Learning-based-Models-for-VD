@@ -79,7 +79,7 @@ each of which saves intermediate files in case the dataset needs to be rebuilt f
 6. Run `vul4c_split.py` to get final Vul4C dataset, which has been split by train/valid/test set.
 
 ## Experiment
-###  D1: Capabilities of Learning-based Models for Vulnerability Detection
+###  D1: Capability of Learning-based Models for Vulnerability Detection
 This experiment investigates the vulnerability detection performance of different types of models
 #### train/inference graph-based models
 
@@ -133,7 +133,7 @@ After the model inference is completed `test.json` is saved recording the id and
 | IVDetect |    0.792    |    0.582    |    0.080    |    0.141    |
 |  LineVul |    0.962    |    0.593    |    0.117    |    0.195    |
 |   SVulD  |    0.820    |    0.637    |    0.100    |    0.172    |
-|  ChatGPT | 0.932±0.015 | 0.125±0.020 | 0.057±0.014 | 0.078±0.016 |
+|  ChatGPT |    0.932    |    0.125    |    0.057    |    0.078    |
 
 
 ###  D2: Interpretation of Learning-based Models for Vulnerability Detection
@@ -141,7 +141,7 @@ We use different interpretability techniques for different models, e.g., GNNExpl
 
 We obtained the attention value of each token as much as possible and visualized it using HTML, an example of LineVul visualization is shown below
 
-![arc](imgs/linevul_15.jpg)
+![arc](imgs/linevul_15.png)
 <p align="center"> LineVul interpretation result on CVE-2016-15006 </p> 
 
 To get these visualizations, you need to modify the configuration file(e.g. `config.json`) on the trained models so that they run the `do_interpret`.
@@ -178,7 +178,7 @@ Follow D1 experiment to train/inference models.
 | Rename all identifier  | 0.0751 | 0.0972 | 0.0247   | 0.1829  | 0.1859 | 0.0663                 |
 
 
-### D4: Ease of Use of Learning-based Models for Vulnerability Detection.  
+### D4: Ease of Deployment of Learning-based Models for Vulnerability Detection.  
 
 We record various features of the model, such as the maximum number of tokens entered and the minimum GPU memory requirement.
 
@@ -190,10 +190,10 @@ We record various features of the model, such as the maximum number of tokens en
 | IVDetect  | ✅                 | ❌           | Medium     | ✅           | ✅                 | >1G                  | Difficult                | Safe    |
 | LineVul   | ❌                 | ❌           | Small      | ✅           | ✅                 | >6G                  | Medium                   | Safe    |
 | SVulD     | ❌                 | ❌           | Small      | ✅           | ✅                 | >6G                  | Medium                   | Safe    |
-| chatgpt   | ❌                 | ❌           | Large      | ❌           | ❌                 | API/Web              | Easy                     | Unsafe  |
+| ChatGPT   | ❌                 | ❌           | Large      | ❌           | ❌                 | API/Web              | Easy                     | Unsafe  |
 
 
-### D5: Economy Impact of Learning-based Models for Vulnerability Detection 
+### D5: Economy of Learning-based Models for Vulnerability Detection 
 
 We record time information during training/inference via python's built-in time library, and use [torchinfo](https://github.com/TylerYep/torchinfo) to record the size of the model.
 
