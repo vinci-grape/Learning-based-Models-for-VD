@@ -21,10 +21,10 @@ mkdir vul4c_dataset && cd vul4c_dataset && unrar vul4c_dataset.part01.rar
 ```
 
 ### Register for an OpenAI account before using ChatGPT
-First you need register an OpenAI account for the OpenAI API service
+First, you need to register an OpenAI account for the OpenAI API service
 https://platform.openai.com/signup
 
-Then create a new secret key at
+Then, create a new secret key at
 https://platform.openai.com/account/api-keys
 
 Please note that you have a `$20` free balance to use.
@@ -32,7 +32,7 @@ Please note that you have a `$20` free balance to use.
 Then you need to go to `openai.api_key` in `LLM/chatgpt.py` to set the API_KEY
 
 ### Install Joern for build Vul4C from scratch[optional]
-Before you build Joern, please make sure you have installed sbt and scala, we recommend install them from SDKMAN.
+Before you build Joern, please make sure you have installed sbt and scala, we recommend installing them from SDKMAN.
 ```shell
 cd Vul4C
 git clone https://github.com/joernio/joern
@@ -42,9 +42,9 @@ cp ../run_joern.py ./run_joern.py
 ```
 
 ### Github API Key[optional]
-In order to download commit files from GitHub, the official API is used and the API KEY needs to be configured.
+In order to download commit files from GitHub, the official API is used, and the API KEY needs to be configured.
 
-Login in GitHub and go to https://github.com/settings/tokens generate a new token
+Login in GitHub and go to https://github.com/settings/tokens to generate a new token
 
 ### Build Tree-sitter
 We modified the tree-sitter, which extend original grammar rules.
@@ -69,10 +69,10 @@ cd tree-sitter-cpp && npm run build
 
 ## Vul4C
 Vul4C requires multiple steps to be performed to collect the dataset, 
-each of which saves intermediate files in case the dataset needs to be rebuilt from scratch due to the network errors, API exceed limits.
+each of which saves intermediate files in case the dataset needs to be rebuilt from scratch due to network errors, API exceed limits.
 
 1. Run `crawl_cve_from_nvd.py` to download all CVEs from the NVD database and save them to a JSON file.
-2. Run `extract_cve_info.py` to extract vulnerability commit URL in CVE, and automatically download the commit files in local.
+2. Run `extract_cve_info.py` to extract vulnerability commit URL in CVE, and automatically download the commit files locally.
 3. Run `extract_file_diff.py` to extract function in file, find which function is vulnerable, and save other functions as non-vulnerable.
 4. Using scala test-suite and JVM multithreading to generate joern graph for Vul4C, `python joern/run_joern.py -java /path/to/java -scala /path/to/scala -sbt /path/to/sbt -working_dir ./ -timeout 60 `
 5. Run `extract_graph.py` to extract joern graph 
@@ -84,7 +84,7 @@ This experiment investigates the vulnerability detection performance of differen
 #### train/inference graph-based models
 
 
-all graph-based models are saved in `Graph/models` directory.
+All graph-based models are saved in `Graph/models` directory.
 ```
 Graph
 ├── GloVe
@@ -96,30 +96,30 @@ Graph
 ```
 You should run `Graph/scripts/process_dataset.py` to get Word2Vec and GloVe embeddings.
 
-To train graph-based models, you can configure the training parameters via config.json(e.g. train batch size).
+To train graph-based models, you can configure the training parameters via config.json(e.g., train batch size).
 Then run `python main.py --dataset=vul4c_dataset` 
 
 After training is complete, the model's checkpoint file will be saved in `Graph/storage/result`.
 
-You need to modify `main.py`, fill in the name of the checkpoint directory, and then modify `config.json` `do_test=True`, and run it again to test the model.
+You need to modify `main.py`, fill in the name of the checkpoint directory, and then modify `do_test=True` in `config.json`, and run it again to test the model.
 
 All performance metrics will be reported in the log file. e.g. `Graph\storage\results\devign\vul4c_dataset\202307251718_v1\train.log`
 
 #### train/inference sequence-based models
-LineVul and SVulD sequence-based models are saved in `sequence` directory.
+LineVul and SVulD sequence-based models are saved in the `sequence` directory.
 
-Before you train the sequence-based models, you need to preprocess the dataset e.g. run `sequence/LineVul/preprocess.py` 
+Before you train the sequence-based models, you need to preprocess the dataset, e.g., run `sequence/LineVul/preprocess.py` 
 ```
 sequence
 ├── LineVul
 └── SVulD
 ```
 
-To train and inference these models use the shell scripts `train.sh` and `test.sh`.
+To train and infer these models, use the shell scripts `train.sh` and `test.sh`.
 
 #### inference on large language model(ChatGPT)
 
-We encapsulate the different example selection strategies(in-contex learning and chain-of-thought) for using chatgpt, using `chatgpt_run.py` to set different settings for running.
+We encapsulate the different example selection strategies(in-context learning and chain-of-thought) for using ChatGPT, using `chatgpt_run.py` to set different settings for running.
 
 #### top25_cwe and seven dangerous types of vulnerabilities
 
@@ -137,19 +137,19 @@ After the model inference is completed `test.json` is saved recording the id and
 
 
 ###  D2: Interpretation of Learning-based Models for Vulnerability Detection
-We use different interpretability techniques for different models, e.g., GNNExplainer for Devin and attention mechanism for LineVul.
+We use different interpretability techniques for different models, e.g., GNNExplainer for Devin and the attention mechanism for LineVul.
 
-We obtained the attention value of each token as much as possible and visualized it using HTML, an example of LineVul visualization is shown below
+We obtained the attention value of each token as much as possible and visualized it using HTML. An example of LineVul visualization is shown below
 
 ![arc](imgs/linevul_15.png)
 <p align="center"> LineVul interpretation result on CVE-2016-15006 </p> 
 
-To get these visualizations, you need to modify the configuration file(e.g. `config.json`) on the trained models so that they run the `do_interpret`.
+To get these visualizations, you need to modify the configuration file(e.g., `config.json`) on the trained models so that they run the `do_interpret`.
 
 In order to obtain the degree of attention the model pays to different statement types, we use [tree-sitter](https://github.com/tree-sitter/tree-sitter)
 
-We also saved thel last hidden vector of the final output of the model before making the binary classification and saved it as `test_tSNE_embedding.pkl`.
-Then  use [sklearn](https://scikit-learn.org/)'s tSNE model to explore class separation performance.
+We also saved the last hidden vector of the final output of the model before making the binary classification and saved it as `test_tSNE_embedding.pkl`.
+Then  use [sklearn](https://scikit-learn.org/)'s t-SNE model to explore class separation performance.
 
 See more code under `RQ/RQ4`
 
